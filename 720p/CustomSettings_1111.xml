@@ -1,0 +1,278 @@
+<window id="1111">
+	<defaultcontrol always="true">100</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>GlobalBackground</include>
+		<control type="label">
+			<include>DialogID</include>
+			<label>CustomSettings.xml</label>
+		</control>
+		<include>time_date</include>
+		<control type="group">
+			<control type="image">
+				<description>Footer Background</description>
+				<posx>0</posx>
+				<posy>685</posy>
+				<width>1280</width>
+				<height>35</height>
+				<texture border="20,20,20,2">other_textures/black-back.png</texture>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>694</posy>
+				<width>1280</width>
+				<height>14</height>
+				<font>Small</font>
+				<align>center</align>
+				<label>[COLOR=blue]$LOCALIZE[31165][/COLOR] $INFO[System.FreeMemory] [COLOR=blue]$LOCALIZE[13271][/COLOR] $INFO[System.CPUUsage] [COLOR=blue]$LOCALIZE[31166][/COLOR] $INFO[System.cputemperature] [COLOR=blue]$LOCALIZE[31167][/COLOR] $INFO[System.gputemperature] [COLOR=blue]$LOCALIZE[31168][/COLOR] $INFO[System.hddtemperature] [COLOR=blue]$LOCALIZE[31169][/COLOR] $INFO[System.FanSpeed]</label>
+			</control>
+		</control>
+		<control type="list" id="100">
+			<description>List</description>
+			<posx>10</posx>
+			<posy>140</posy>
+			<width>300</width>
+			<height>480</height>
+			<onup>100</onup>
+			<ondown>100</ondown>
+			<onleft>-</onleft>
+			<onright>99</onright>
+			<scrolltime>0</scrolltime>
+			<orientation>vertical</orientation>
+			<pagecontrol>-</pagecontrol>
+			<itemlayout height="46" width="300">
+				<control type="image">
+					<width>300</width>
+					<height>44</height>
+					<texture border="2">other_textures/ButtonNF.png</texture>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<width>260</width>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout height="46" width="300">
+				<control type="image">
+					<width>300</width>
+					<height>44</height>
+					<texture border="5">other_textures/ButtonFO.png</texture>
+					<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(100)">Conditional</animation>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<width>260</width>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<description>Background Visuals</description>
+					<label>31016</label>
+					<onclick>-</onclick>
+				</item>
+				<item id="2">
+					<description>View Options</description>
+					<label>31162</label>
+					<onclick>-</onclick>
+				</item>
+				<item id="3">
+					<description>Lyrics/Subtitles</description>
+					<label>31017</label>
+					<onclick>-</onclick>
+				</item>
+				<item id="4">
+					<description>Debug</description>
+					<label>31033</label>
+					<onclick>-</onclick>
+					<visible>!System.Platform.Xbox</visible>
+				</item>
+				<item id="5">
+					<description>Reset Skin</description>
+					<label>31161</label>
+					<onclick>Skin.ResetSettings</onclick>
+					<visible>!System.Platform.Xbox</visible>
+				</item>
+			</content>
+		</control>
+		<control type="group" id="99">
+			<posx>340</posx>
+			<posy>140</posy>
+			<control type="grouplist" id="200">
+				<description>Control Area</description>
+				<width>820</width>
+				<height>480</height>
+				<itemgap>2</itemgap>
+				<onup>200</onup>
+				<ondown>200</ondown>
+				<onleft>100</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<visible>Container(100).Hasfocus(1)</visible>
+				<control type="button" id="204">
+					<description>Choose Background Image</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31171</label>
+					<onclick>Skin.SetFile(Custom_Background,.png|.jpg|.gif|.tbn|.dds,special://skin/backgrounds/)</onclick>
+				</control>
+				<control type="radiobutton" id="205">
+					<description>Global Fanart</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31172</label>
+					<onclick>Skin.ToggleSetting(NoGlobalFanart)</onclick>
+					<selected>Skin.HasSetting(NoGlobalFanart)</selected>
+				</control>
+				<control type="radiobutton" id="201">
+					<description>Background Visualiser</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31023</label>
+					<onclick>Skin.ToggleSetting(NoBackgroundVisualiser)</onclick>
+					<selected>Skin.HasSetting(NoBackgroundVisualiser)</selected>
+				</control>
+				<control type="radiobutton" id="202">
+					<description>Background Video</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31024</label>
+					<onclick>Skin.ToggleSetting(NoBackgroundVideo)</onclick>
+					<selected>Skin.HasSetting(NoBackgroundVideo)</selected>
+				</control>
+			</control>
+			<control type="grouplist" id="600">
+				<description>Control Area</description>
+				<width>820</width>
+				<height>480</height>
+				<itemgap>2</itemgap>
+				<onup>200</onup>
+				<ondown>200</ondown>
+				<onleft>100</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<visible>Container(100).Hasfocus(2)</visible>
+				<control type="radiobutton" id="601">
+					<description>Media Plot</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31173</label>
+					<onclick>Skin.ToggleSetting(NoPlot)</onclick>
+					<selected>Skin.HasSetting(NoPlot)</selected>
+				</control>
+				<control type="radiobutton" id="602">
+					<description>Media Flags</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31174</label>
+					<onclick>Skin.ToggleSetting(NoFlags)</onclick>
+					<selected>Skin.HasSetting(NoFlags)</selected>
+				</control>
+				<control type="radiobutton" id="603">
+					<description>Media Totals</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31175</label>
+					<onclick>Skin.ToggleSetting(NoTotals)</onclick>
+					<selected>Skin.HasSetting(NoTotals)</selected>
+				</control>
+			</control>
+			<control type="grouplist" id="300">
+				<description>Control Area</description>
+				<width>820</width>
+				<height>480</height>
+				<itemgap>2</itemgap>
+				<onup>300</onup>
+				<ondown>300</ondown>
+				<onleft>100</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<visible>Container(100).Hasfocus(3)</visible>
+				<control type="button" id="301">
+					<description>Default Button</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31025</label>
+					<onclick>Skin.SetFile(LyricPath,.py)</onclick>
+				</control>
+				<control type="button" id="302">
+					<description>Default Button</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31026</label>
+					<onclick>Skin.SetFile(SubtitlesPath,.py)</onclick>
+				</control>
+			</control>
+			<control type="grouplist" id="400">
+				<description>Control Area</description>
+				<width>820</width>
+				<height>480</height>
+				<itemgap>2</itemgap>
+				<onup>400</onup>
+				<ondown>400</ondown>
+				<onleft>100</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<visible>Container(100).Hasfocus(3)</visible>
+				<control type="label" id="401">
+					<description>Default Button</description>
+					<width>800</width>
+					<align>right</align>
+					<label>$INFO[Skin.String(LyricPath)]</label>
+					<visible>!IsEmpty(Skin.String(LyricPath))</visible>
+				</control>
+				<control type="label" id="402">
+					<description>Default Button</description>
+					<width>800</width>
+					<align>right</align>
+					<label>31160</label>
+					<visible>IsEmpty(Skin.String(LyricPath))</visible>
+				</control>
+				<control type="label" id="403">
+					<description>Default Button</description>
+					<width>800</width>
+					<align>right</align>
+					<label>$INFO[Skin.String(SubtitlesPath)]</label>
+					<visible>!IsEmpty(Skin.String(SubtitlesPath))</visible>
+				</control>
+				<control type="label" id="404">
+					<description>Default Button</description>
+					<width>800</width>
+					<align>right</align>
+					<label>31160</label>
+					<visible>IsEmpty(Skin.String(SubtitlesPath))</visible>
+				</control>
+			</control>
+			<control type="grouplist" id="500">
+				<description>Control Area</description>
+				<width>820</width>
+				<height>480</height>
+				<itemgap>2</itemgap>
+				<onup>600</onup>
+				<ondown>600</ondown>
+				<onleft>100</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+				<visible>Container(100).Hasfocus(4)</visible>
+				<control type="radiobutton" id="501">
+					<description>Enable Debug Grid</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31034</label>
+					<onclick>Skin.ToggleSetting(DebugGrid)</onclick>
+					<onclick>XBMC.ReloadSkin()</onclick>
+					<selected>Skin.HasSetting(DebugGrid)</selected>
+				</control>
+				<control type="radiobutton" id="502">
+					<description>Disable Debug Info</description>
+					<width>820</width>
+					<align>left</align>
+					<label>31035</label>
+					<onclick>Skin.ToggleSetting(HideDebugInfo)</onclick>
+					<selected>Skin.HasSetting(HideDebugInfo)</selected>
+				</control>
+			</control>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

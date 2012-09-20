@@ -1,0 +1,344 @@
+<includes>
+	<include name="View_501_LowList">
+		<description>Low List View (id=501)</description>
+		<control type="list" id="501">
+			<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Albums) | Container.Content(Artists)</visible>
+			<posx>672</posx>
+			<posy>498</posy>
+			<width>567</width>
+			<height>182</height>
+			<onleft>9000</onleft>
+			<onright>61</onright>
+			<onup>501</onup>
+			<ondown>501</ondown>
+			<pagecontrol>61</pagecontrol>
+			<viewtype label="31207">list</viewtype>
+			<scrolltime>200</scrolltime>
+			<preloaditems>-</preloaditems>
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="fade" start="100" end="50" time="200" />
+			</animation>
+			<itemlayout height="46" width="567">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>567</width>
+					<height>44</height>
+					<texture border="2">other_textures/black-back.png</texture>
+					<visible>Skin.HasSetting(NoGlobalFanart)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>567</width>
+					<height>44</height>
+					<texture border="2">other_textures/ButtonNF.png</texture>
+					<visible>!Skin.HasSetting(NoGlobalFanart)</visible>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<height>44</height>
+					<font>Medium</font>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<posx>477</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>30</height>
+					<font>Small</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Premiered]</label>
+					<visible>Container.Content(TVShows) | Container.Content(Episodes)</visible>
+				</control>
+				<control type="label">
+					<posx>480</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>30</height>
+					<font>Small</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Year]</label>
+					<visible>Container.Content(Movies)</visible>
+				</control>
+				<control type="label">
+					<posx>480</posx>
+					<posy>0</posy>
+					<width>160</width>
+					<height>30</height>
+					<font>Small</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Artist]</label>
+					<visible>Container.Content(Albums)</visible>
+				</control>
+				<control type="label">
+					<posx>480</posx>
+					<posy>0</posy>
+					<width>160</width>
+					<height>30</height>
+					<font>Small</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(Artist_Genre)]</label>
+					<scroll>true</scroll>
+					<visible>Container.Content(Artists)</visible>
+				</control>
+				<control type="image">
+					<posx>435</posx>
+					<posy>25</posy>
+					<width>90</width>
+					<height>18</height>
+					<aspectratio>stretch</aspectratio>
+					<texture fallback="other_textures/LeftRating/rating0.png">$INFO[ListItem.StarRating,other_textures/LeftRating/]</texture>
+					<visible>!IsEmpty(ListItem.Path)</visible>
+				</control>
+				<control type="image">
+					<posx>530</posx>
+					<posy>11</posy>
+					<width>30</width>
+					<height>23</height>
+					<texture>$INFO[ListItem.Overlay]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout height="46" width="567">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>567</width>
+					<height>44</height>
+					<texture border="5">other_textures/ButtonFo.png</texture>
+					<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(501)">Conditional</animation>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<height>44</height>
+					<font>Medium</font>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<posx>477</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>30</height>
+					<font>Small</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Premiered]</label>
+					<visible>Container.Content(Episodes)</visible>
+				</control>
+				<control type="label">
+					<posx>480</posx>
+					<posy>0</posy>
+					<width>160</width>
+					<height>30</height>
+					<font>Small</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Artist]</label>
+					<visible>Container.Content(Albums)</visible>
+				</control>
+				<control type="label">
+					<posx>480</posx>
+					<posy>0</posy>
+					<width>160</width>
+					<height>30</height>
+					<font>Small</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(Artist_Genre)]</label>
+					<scroll>true</scroll>
+					<visible>Container.Content(Artists)</visible>
+				</control>
+				<control type="label">
+					<posx>477</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>30</height>
+					<font>Small</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</label>
+					<visible>!IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+					<visible>Container.Content(TVShows)</visible>
+				</control>
+				<control type="label">
+					<posx>480</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>30</height>
+					<font>Small</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+					<visible>!IsEmpty(ListItem.Duration) + !SubString(ListItem.Duration,min)</visible>
+					<visible>Container.Content(Movies)</visible>
+				</control>
+				<control type="label">
+					<posx>480</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>30</height>
+					<font>Small</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Duration]</label>
+					<visible>!IsEmpty(ListItem.Duration) + SubString(ListItem.Duration,min)</visible>
+					<visible>Container.Content(Movies)</visible>
+				</control>
+				<control type="image">
+					<posx>435</posx>
+					<posy>25</posy>
+					<width>90</width>
+					<height>18</height>
+					<aspectratio>stretch</aspectratio>
+					<texture fallback="other_textures/LeftRating/rating0.png">$INFO[ListItem.StarRating,other_textures/LeftRating/]</texture>
+					<visible>!IsEmpty(ListItem.Path)</visible>
+				</control>
+				<control type="image">
+					<posx>530</posx>
+					<posy>11</posy>
+					<width>30</width>
+					<height>23</height>
+					<texture>$INFO[ListItem.Overlay]</texture>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(501)</visible>
+			<posx>27</posx>
+			<posy>68</posy>
+			<control type="image">
+				<description>plot background</description>
+				<posx>15</posx>
+				<posy>430</posy>
+				<width>625</width>
+				<height>182</height>
+				<texture>other_textures/black-back.png</texture>
+				<visible>Skin.HasSetting(NoGlobalFanart)</visible>
+			</control>
+			<control type="image">
+				<description>plot background</description>
+				<posx>15</posx>
+				<posy>430</posy>
+				<width>625</width>
+				<height>182</height>
+				<texture>other_textures/ButtonNF.png</texture>
+				<visible>!Skin.HasSetting(NoGlobalFanart)</visible>
+			</control>
+			<control type="textbox">
+				<posx>35</posx>
+				<posy>440</posy>
+				<width>585</width>
+				<height>156</height>
+				<font>Small</font>
+				<align>justify</align>
+				<label>$INFO[ListItem.Plot]</label>
+				<visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes)] + !Skin.HasSetting(NoPlot)</visible>
+			</control>
+			<control type="textbox">
+				<posx>35</posx>
+				<posy>440</posy>
+				<width>585</width>
+				<height>156</height>
+				<font>Small</font>
+				<align>justify</align>
+				<label>$INFO[Container.ShowPlot]</label>
+				<visible>Container.Content(Seasons) + !Skin.HasSetting(NoPlot)</visible>
+			</control>
+			<control type="textbox">
+				<posx>35</posx>
+				<posy>440</posy>
+				<width>585</width>
+				<height>156</height>
+				<font>Medium</font>
+				<align>justify</align>
+				<label>[UPPERCASE]$INFO[ListItem.Tagline][/UPPERCASE]</label>
+				<visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + Skin.HasSetting(NoPlot)</visible>
+			</control>
+			<control type="textbox">
+				<description>Album Review</description>
+				<posx>35</posx>
+				<posy>440</posy>
+				<width>585</width>
+				<height>156</height>
+				<font>Small</font>
+				<align>justify</align>
+				<label fallback="414">$INFO[ListItem.Property(Album_Description)]</label>
+				<visible>Container.Content(Albums)</visible>
+			</control>
+			<control type="textbox">
+				<description>Artist Biography</description>
+				<posx>35</posx>
+				<posy>440</posy>
+				<width>580</width>
+				<height>156</height>
+				<font>Small</font>
+				<align>justify</align>
+				<label fallback="547">$INFO[ListItem.Property(Artist_Description)]</label>
+				<visible>Container.Content(Artists)</visible>
+			</control>	
+		</control>
+		<control type="group">
+			<description>Fanart image for Fanart disabled</description>
+			<visible>Control.IsVisible(501) + [!Skin.HasSetting(NoGlobalFanart) + !Container.Scrolling]</visible>
+			<control type="image">
+				<posx>42</posx>
+				<posy>72</posy>
+				<width>1197</width>
+				<height>422</height>
+				<texture border="4">other_textures/ButtonNF.png</texture>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>77</posy>
+				<width>1187</width>
+				<height>412</height>
+				<aspectratio align="center" aligny="top">scale</aspectratio>
+				<texture fallback="fanart_fallback_video_small.png" background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+				<bordersize>2</bordersize>
+				<fadetime>800</fadetime>
+				<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+			</control>
+			<control type="image">
+				<posx>47</posx>
+				<posy>77</posy>
+				<width>1187</width>
+				<height>412</height>
+				<aspectratio align="center" aligny="top">scale</aspectratio>
+				<texture fallback="fanart_fallback_music_small.png" background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+				<bordersize>2</bordersize>
+				<fadetime>800</fadetime>
+				<visible>Container.Content(Albums) | Container.Content(Artists)</visible>
+			</control>
+			<control type="image">
+				<posx>53</posx>
+				<posy>277</posy>
+				<width>448</width>
+				<height>206</height>
+				<fadetime>200</fadetime>
+				<aspectratio align="left" aligny="bottom">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<bordertexture border="5">white.png</bordertexture>
+				<bordersize>1</bordersize>
+				<fadetime>-</fadetime>
+				<visible>!Container.Content(Artists)</visible>
+			</control>
+		</control>
+		<control type="scrollbar" id="61">
+			<posx>1238</posx>
+			<posy>498</posy>
+			<height>182</height>
+			<onleft>501</onleft>
+			<onright>9000</onright>
+			<visible allowhiddenfocus="true">Control.IsVisible(501) + [Control.HasFocus(61) | Container.Scrolling]</visible>
+			<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(61) | Container.Scrolling">Conditional</animation>
+		</control>
+	</include>
+</includes>

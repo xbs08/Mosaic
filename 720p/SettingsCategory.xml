@@ -1,0 +1,75 @@
+<window id="12">
+	<defaultcontrol always="true">3</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>GlobalBackground</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>SettingsCategory.xml</label>
+		</control>
+		<include>time_date</include>
+		<control type="group">
+			<control type="image">
+				<description>Footer Background</description>
+				<posx>0</posx>
+				<posy>685</posy>
+				<width>1280</width>
+				<height>35</height>
+				<texture border="20,20,20,2">other_textures/black-back.png</texture>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>694</posy>
+				<width>1280</width>
+				<height>14</height>
+				<font>Small</font>
+				<align>center</align>
+				<label>[COLOR=blue]$LOCALIZE[31165][/COLOR] $INFO[System.FreeMemory] [COLOR=blue]$LOCALIZE[13271][/COLOR] $INFO[System.CPUUsage] [COLOR=blue]$LOCALIZE[31166][/COLOR] $INFO[System.cputemperature] [COLOR=blue]$LOCALIZE[31167][/COLOR] $INFO[System.gputemperature] [COLOR=blue]$LOCALIZE[31168][/COLOR] $INFO[System.hddtemperature] [COLOR=blue]$LOCALIZE[31169][/COLOR] $INFO[System.FanSpeed]</label>
+			</control>
+		</control>
+		<control type="grouplist" id="3">
+			<description>Button Area</description>
+			<posx>10</posx>
+			<posy>140</posy>
+			<width>300</width>
+			<height>480</height>
+			<itemgap>2</itemgap>
+			<onleft>5</onleft>
+			<onright>5</onright>
+			<onup>3</onup>
+			<ondown>3</ondown>
+			<orientation>vertical</orientation>
+		</control>
+		<control type="grouplist" id="5">
+			<description>Control Area</description>
+			<posx>340</posx>
+			<posy>140</posy>
+			<width>820</width>
+			<height>480</height>
+			<itemgap>2</itemgap>
+			<onleft>3</onleft>
+			<onright>3</onright>
+			<onup>5</onup>
+			<ondown>5</ondown>
+			<orientation>vertical</orientation>
+		</control>
+		<control type="button" id="7">
+			<description>Default Button</description>
+			<align>left</align>
+		</control>
+		<control type="radiobutton" id="8">
+			<description>Default Radio Button</description>
+			<radioposx>770</radioposx>
+			<align>left</align>
+		</control>
+		<control type="spincontrolex" id="9">
+			<description>Default Spin Control</description>
+			<align>left</align>
+		</control>
+		<control type="button" id="10">
+			<description>Default Category Button</description>
+			<align>left</align>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

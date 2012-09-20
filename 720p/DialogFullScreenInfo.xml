@@ -1,0 +1,139 @@
+<window type="dialog" id="142">
+	<defaultcontrol always="true">603</defaultcontrol>
+	<controls>
+		<control type="group">
+			<control type="label">
+				<include>DialogID</include>
+				<label>DialogFullscreenInfo.xml</label>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>470</posy>
+				<width>1280</width>
+				<height>250</height>
+				<texture>other_textures/black-back.png</texture>
+				<animation effect="slide" start="0,0" end="0,120" time="0" condition="Skin.HasSetting(NoPlot)">Conditional</animation>
+			</control>
+			<control type="image">
+				<description>Not Movies cover image</description>
+				<posx>30</posx>
+				<posy>480</posy>
+				<width>170</width>
+				<height>130</height>
+				<fadetime>200</fadetime>
+				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<aspectratio align="left" aligny="top">keep</aspectratio>
+				<bordertexture border="5">other_textures/ButtonFo.png</bordertexture>
+				<bordersize>8</bordersize>
+				<visible>!VideoPlayer.Content(Movies)</visible>
+			</control>		
+			<control type="image">
+				<description>Movies cover image</description>
+				<posx>30</posx>
+				<posy>480</posy>
+				<width>170</width>
+				<height>160</height>
+				<fadetime>200</fadetime>
+				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<aspectratio align="left" aligny="top">keep</aspectratio>
+				<bordertexture border="5">other_textures/ButtonFo.png</bordertexture>
+				<bordersize>8</bordersize>
+				<visible>VideoPlayer.Content(Movies)</visible>
+			</control>
+			<control type="textbox">
+				<description>Description Value</description>
+				<visible>VideoPlayer.Content(Episodes) + !Skin.HasSetting(NoPlot)</visible>
+				<posx>230</posx>
+				<posy>490</posy>
+				<width>1020</width>
+				<height>110</height>
+				<align>justify</align>
+				<label>$INFO[VideoPlayer.Plot]</label>
+			</control>
+			<control type="textbox">
+				<description>Description Value</description>
+				<visible>VideoPlayer.Content(Movies) + !Skin.HasSetting(NoPlot)</visible>
+				<posx>170</posx>
+				<posy>490</posy>
+				<width>1080</width>
+				<height>110</height>
+				<align>justify</align>
+				<label>$INFO[VideoPlayer.Plot]</label>
+			</control>
+			<control type="label">
+				<posx>170</posx>
+				<posy>610</posy>
+				<width>880</width>
+				<label>$INFO[VideoPlayer.Director]</label>
+				<align>left</align>
+				<font>Small</font>
+				<visible>VideoPlayer.Content(Movies)</visible>
+			</control>
+			<control type="label">
+				<posx>30</posx>
+				<posy>610</posy>
+				<width>880</width>
+				<label>$INFO[VideoPlayer.TVShowTitle] - ($INFO[VideoPlayer.Season]$INFO[VideoPlayer.Episode,x])</label>
+				<align>left</align>
+				<font>Medium</font>
+				<visible>VideoPlayer.Content(Episodes)</visible>
+			</control>
+			<control type="label">
+				<posx>30</posx>
+				<posy>610</posy>
+				<width>880</width>
+				<label>$INFO[VideoPlayer.Artist]$INFO[VideoPlayer.Album, - ]</label>
+				<align>left</align>
+				<font>Medium</font>
+				<visible>VideoPlayer.Content(MusicVideos)</visible>
+			</control>
+			<control type="label">
+				<posx>30</posx>
+				<posy>644</posy>
+				<width>880</width>
+				<label>$INFO[VideoPlayer.Title]</label>
+				<scroll>true</scroll>
+				<align>left</align>
+				<font>Medium</font>
+			</control>
+			<control type="label">
+				<description>Player Times</description>
+				<posx>1250</posx>
+				<posy>610</posy>
+				<width>500</width>
+				<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+				<align>right</align>
+				<font>Medium</font>
+			</control>
+			<control type="label">
+				<description>Current Video End Time</description>
+				<posx>1250</posx>
+				<posy>644</posy>
+				<width>890</width>
+				<label>[COLOR=blue]$LOCALIZE[31000]:[/COLOR] $INFO[Player.FinishTime]</label>
+				<align>right</align>
+				<font>Medium</font>
+			</control>
+			<control type="progress">
+				<description>Progressbar</description>
+				<posx>30</posx>
+				<posy>35r</posy>
+				<width>1220</width>
+				<height>14</height>
+				<info>Player.Progress</info>
+			</control>
+			<control type="label">
+				<description>Chapter Count</description>
+				<posx>0</posx>
+				<posy>685</posy>
+				<width>1280</width>
+				<label>$INFO[Player.Chapter,[COLOR=blue]$LOCALIZE[21396]:[/COLOR] ]$INFO[Player.ChapterCount, / ]</label>
+				<align>center</align>
+				<font>Small</font>
+				<visible>Player.ChapterCount</visible>
+			</control>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

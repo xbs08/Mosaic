@@ -1,0 +1,94 @@
+<window type="buttonMenu" id="111">
+	<defaultcontrol always="true">3116</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<include>DialogVisibleEffect</include>
+	<controls>
+		<include>GlobalOverlay</include>
+		<control type="group">
+			<posx>440</posx>
+			<posy>140</posy>
+			<control type="label">
+				<include>DialogID</include>
+				<label>DialogButtonMenu.xml</label>
+			</control>
+			<control type="grouplist" id="1">
+				<posx>30</posx>
+				<posy>40</posy>
+				<width>340</width>
+				<height>382</height>
+				<itemgap>2</itemgap>
+				<onleft>Dialog.Close(111)</onleft>
+				<onright>Dialog.Close(111)</onright>
+				<onup>1</onup>
+				<ondown>1</ondown>
+				<orientation>vertical</orientation>
+				<control type="grouplist" id="3110">
+					<control type="button" id="3111">
+						<description>Master mode button</description>
+						<width>340</width>
+						<label>20046</label>
+						<altlabel>20045</altlabel>
+						<onclick>xbmc.mastermode</onclick>
+						<visible>System.HasLocks</visible>
+					</control>
+					<control type="button" id="3112">
+						<description>LogOff Profile</description>
+						<width>340</width>
+						<include>SettingsLabel</include>
+						<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+						<onclick>dialog.close(all,true)</onclick>
+						<onclick>System.LogOff</onclick>
+						<visible>System.HasLoginScreen</visible>
+						<visible>System.Loggedon</visible>
+					</control>
+					<control type="button" id="3113">
+						<description>Custom Shutdown Timer button</description>
+						<width>340</width>
+						<label>20151</label>
+						<onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
+						<visible>System.HasAlarm(shutdowntimer)</visible>
+					</control>
+					<control type="button" id="3114">
+						<description>Custom Shutdown Timer button</description>
+						<width>340</width>
+						<label>20150</label>
+						<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>
+						<visible>!System.HasAlarm(shutdowntimer)</visible>
+					</control>
+					<control type="button" id="3115">
+						<description>Reboot button</description>
+						<width>340</width>
+						<label>13013</label>
+						<onclick>xbmc.Reset()</onclick>
+					</control>
+					<control type="button" id="3116">
+						<description>Shutdown</description>
+						<width>340</width>
+						<label>13005</label>
+						<onclick>xbmc.ShutDown()</onclick>
+					</control>
+					<control type="button" id="3117">
+						<description>Restart Xbmc</description>
+						<width>340</width>
+						<label>13313</label>
+						<onclick>xbmc.RestartApp()</onclick>
+					</control>					
+					<control type="button" id="3118">
+						<description>Dashboard</description>
+						<width>340</width>
+						<label>13006</label>
+						<onclick>xbmc.Quit()</onclick>
+					</control>
+					<control type="label" id="3119">
+						<description>Alarm Time</description>
+						<width>340</width>
+						<align>center</align>
+						<label>$LOCALIZE[20145] [B]$INFO[System.Alarmpos][/B]</label>
+						<visible>System.HasAlarm(shutdowntimer)</visible>
+					</control>
+				</control>
+			</control>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

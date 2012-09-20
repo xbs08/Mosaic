@@ -1,0 +1,131 @@
+<includes>
+	<include name="View_506_Banner">
+		<description>Banner View (id=506)</description>
+		<control type="panel" id="506">
+			<visible>Container.Content(TVShows) | Window.IsVisible(Programs)</visible>
+			<posx>178</posx>
+			<posy>140</posy>
+			<width>924</width>
+			<height>300</height>
+			<onleft>9000</onleft>
+			<onright>66</onright>
+			<onup>506</onup>
+			<ondown>506</ondown>
+			<pagecontrol>66</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<focusposition>-</focusposition>
+			<orientation>-</orientation>
+			<preloaditems>2</preloaditems>
+			<viewtype label="31202">wide</viewtype>
+			<itemlayout width="462" height="100">	
+				<control type="image">
+					<posx>2</posx>
+					<posy>0</posy>
+					<width>458</width>
+					<height>96</height>
+					<texture border="5">other_textures/ButtonNF.png</texture>
+				</control>
+				<control type="image">
+					<posx>7</posx>
+					<posy>5</posy>
+					<width>448</width>
+					<height>86</height>
+					<aspectratio>keep</aspectratio>
+					<texture fallback="DefaultAddonNone.png" background="true">$INFO[ListItem.Icon]</texture>
+					<bordersize>2</bordersize>
+				</control>
+			</itemlayout>
+			<focusedlayout width="462" height="100">
+				<control type="image">
+					<posx>2</posx>
+					<posy>0</posy>
+					<width>458</width>
+					<height>96</height>
+					<texture border="5">other_textures/ButtonFo.png</texture>
+					<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(506)">Conditional</animation>
+				</control>
+				<control type="image">
+					<posx>7</posx>
+					<posy>5</posy>
+					<width>448</width>
+					<height>86</height>
+					<aspectratio>keep</aspectratio>
+					<texture fallback="DefaultAddonNone.png" background="true">$INFO[ListItem.Icon]</texture>
+					<bordersize>2</bordersize>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(506)</visible>
+			<control type="image">
+				<visible>!IsEmpty(ListItem.Overlay)</visible>
+				<posx>66</posx>
+				<posy>480</posy>
+				<width>24</width>
+				<height>24</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.Overlay]</texture>
+			</control>
+			<control type="label">
+				<posx>100</posx>
+				<posy>470</posy>
+				<width>920</width>
+				<font>Large</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<visible>Container.Content(TvShows)</visible>
+				<posx>100r</posx>
+				<posy>470</posy>
+				<width>160</width>
+				<font>Medium</font>
+				<align>right</align>
+				<label>$INFO[listitem.premiered]</label>
+			</control>
+			<control type="label">
+				<visible>Window.IsVisible(Programs)</visible>
+				<posx>100r</posx>
+				<posy>470</posy>
+				<width>160</width>
+				<font>Medium</font>
+				<align>right</align>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+			<control type="label">
+				<posx>100</posx>
+				<posy>500</posy>
+				<width>540</width>
+				<font>Small</font>
+				<label>$INFO[ListItem.Genre]</label>
+			</control>
+			<control type="label">
+				<visible>Container.Content(TvShows)</visible>
+				<posx>100r</posx>
+				<posy>500</posy>
+				<width>540</width>
+				<font>Small</font>
+				<align>right</align>
+				<label>$INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102] - ]$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[16101]]</label>
+			</control>
+			<control type="textbox">
+				<description>Description Value Movies/TVShows</description>
+				<visible>Container.Content(TvShows) + !Skin.HasSetting(NoPlot)</visible>
+				<posx>100</posx>
+				<posy>540</posy>
+				<width>1080</width>
+				<height>110</height>
+				<align>justify</align>
+				<label>$INFO[ListItem.Plot]</label>
+			</control>
+		</control>
+		<control type="scrollbar" id="66">
+			<posx>1102</posx>
+			<posy>140</posy>
+			<height>300</height>
+			<onleft>506</onleft>
+			<onright>9000</onright>
+			<visible allowhiddenfocus="true">Control.IsVisible(506) + [Control.HasFocus(66) | Container.Scrolling]</visible>
+			<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(66) | Container.Scrolling">Conditional</animation>
+		</control>
+	</include>
+</includes>

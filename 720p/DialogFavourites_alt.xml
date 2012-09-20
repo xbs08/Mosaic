@@ -1,0 +1,92 @@
+<window type="dialog" id="134">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+		<control type="group">
+			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="400,0" time="400" tween="quadratic" easing="out">WindowClose</animation>
+			<control type="image">
+				<posx>400r</posx>
+				<posy>0</posy>
+				<width>400</width>
+				<height>685</height>
+				<texture>other_textures/black-back.png</texture>
+			</control>
+			<control type="image">
+				<posx>370r</posx>
+				<posy>30</posy>
+				<width>200</width>
+				<height>200</height>
+				<aspectratio align="center">keep</aspectratio>
+				<fadetime>200</fadetime>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordertexture border="8">other_textures/ButtonFO.png</bordertexture>
+				<bordersize>8</bordersize>
+			</control>
+			<control type="list" id="450">
+				<posx>390r</posx>
+				<posy>250</posy>
+				<width>380</width>
+				<height>414</height>
+				<onup>450</onup>
+				<onleft>Dialog.Close(Favourites)</onleft>
+				<onright>450</onright>
+				<ondown>450</ondown>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="46">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<height>44</height>
+						<texture border="5">other_textures/ButtonNF.png</texture>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>370</width>
+						<height>44</height>
+						<font>Medium</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<selectedcolor>blue</selectedcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="46">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<height>44</height>
+						<visible>!Control.HasFocus(450)</visible>
+						<texture border="3">other_textures/ButtonNF.png</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<height>44</height>
+						<visible>Control.HasFocus(450)</visible>
+						<texture border="3">other_textures/ButtonFO.png</texture>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>370</width>
+						<height>44</height>
+						<font>Medium</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<selectedcolor>blue</selectedcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

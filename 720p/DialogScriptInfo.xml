@@ -1,0 +1,62 @@
+<window id="2004">
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<include>DialogVisibleEffect</include>
+	
+	<controls>
+		<include>GlobalOverlay</include>
+		<control type="group">
+			<posx>140</posx>
+			<posy>100</posy>
+			<control type="image">
+				<posx>-20</posx>
+				<posy>-20</posy>
+				<width>1040</width>
+				<height>580</height>
+				<texture border="22">other_textures/black-back.png</texture>
+			</control>
+			<control type="label">
+				<posy>-40</posy>
+				<include>DialogID</include>
+				<label>DialogPictureInfo.xml</label>
+			</control>
+			<control type="label">
+				<description>heading</description>
+				<posx>10</posx>
+				<width>1000</width>
+				<label>262</label>
+				<font>Medium</font>
+				<align>center</align>
+			</control>
+			
+			<control type="textbox" id="5">
+				<description>textarea</description>
+				<posx>20</posx>
+				<posy>40</posy>
+				<width>1000</width>
+				<height>560</height>
+				<label>-</label>
+				<font>font11</font>
+				<align>justify</align>
+				<textcolor>white</textcolor>
+				<pagecontrol>61</pagecontrol>
+			</control>
+			
+			<control type="scrollbar" id="61">
+				<posx>1160</posx>
+				<posy>40</posy>
+				<height>560</height>
+				<onleft>61</onleft>
+				<onright>61</onright>
+				<ondown>61</ondown>
+				<onup>61</onup>
+				<visible allowhiddenfocus="true">Control.IsVisible(5) + Control.HasFocus(61)</visible>
+				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(61)">Conditional</animation>
+			</control>
+			
+		</control>
+		
+		<include>Debug_Grid</include>
+	</controls>
+</window>

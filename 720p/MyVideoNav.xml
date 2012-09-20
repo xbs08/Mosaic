@@ -1,0 +1,264 @@
+<window id="6">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50,501,502,503,504,505,506,509</views>
+	<controls>
+		<control type="radiobutton" id="19">
+			<description>Filter (hidden)</description>
+			<include>HiddenButton</include>
+		</control>
+		<include>GlobalBackground</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>MyVideoNav.xml</label>
+		</control>
+		<include>time_date</include>
+		<include>View_50_List</include>
+		<include>View_501_LowList</include>
+		<include>View_502_Poster</include>
+		<include>View_503_FanartPoster</include>
+		<include>View_504_Thumb</include>
+		<include>View_505_FanartThumb</include>
+		<include>View_506_Banner</include>
+		<include>View_509_Icon</include>
+		<include>PageCountLabel</include>
+		<include>ScrollOffsetLabel</include>
+		<control type="grouplist" id="9000">
+			<posx>-210</posx>
+			<posy>140</posy>
+			<width>220</width>
+			<height>600</height>
+			<itemgap>2</itemgap>
+			<onleft>50</onleft>
+			<onright>50</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<orientation>vertical</orientation>
+			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="220" end="-50" time="200" />
+			</animation>
+			<control type="button" id="2">
+				<description>View</description>
+				<width>220</width>
+				<align>left</align>
+			</control>
+			<control type="button" id="3">
+				<description>Sort</description>
+				<width>220</width>
+				<align>left</align>
+			</control>
+			<control type="togglebutton" id="4">
+				<description>Ascending</description>
+				<width>220</width>
+				<align>left</align>
+				<label>584</label>
+				<altlabel>585</altlabel>
+			</control>
+			<control type="button" id="5">
+				<description>Files</description>
+				<width>220</width>
+				<align>left</align>
+				<label>31001</label>
+				<onclick>SetFocus(50)</onclick>
+			</control>
+			<control type="radiobutton" id="7">
+				<description>Stack</description>
+				<width>220</width>
+				<align>left</align>
+				<label>14000</label>
+				<altlabel>14001</altlabel>
+			</control>
+			<control type="button" id="8">
+				<description>Search</description>
+				<width>220</width>
+				<align>left</align>
+				<label>137</label>
+			</control>
+			<control type="radiobutton" id="11">
+				<description>Unlock Shares</description>
+				<width>220</width>
+				<align>left</align>
+				<label>20336</label>
+				<onclick>xbmc.mastermode</onclick>
+				<selected>system.ismaster</selected>
+				<visible>system.haslocks</visible>
+			</control>
+			<control type="radiobutton" id="16">
+				<description>PartyMode</description>
+				<width>220</width>
+				<align>left</align>
+				<label>589</label>
+			</control>
+			<control type="radiobutton" id="17">
+				<description>Flatten</description>
+				<width>220</width>
+				<align>left</align>
+				<label>20411</label>
+			</control>
+			<control type="button" id="21">
+				<description>Activate Filter</description>
+				<width>220</width>
+				<align>left</align>
+				<label>587</label>
+				<onclick>SendClick(videolibrary,19)</onclick>
+				<onclick>SetFocus(22)</onclick>
+				<visible>IsEmpty(Window.Property(filter))</visible>
+			</control>
+			<control type="button" id="22">
+				<description>Show Filter Label</description>
+				<width>220</width>
+				<align>left</align>
+				<label>$INFO[Window.Property(filter)]</label>
+				<onclick>SendClick(videolibrary,19)</onclick>
+				<onclick>SetFocus(21)</onclick>
+				<visible>!IsEmpty(Window.Property(filter))</visible>
+			</control>
+			<control type="button" id="98">
+				<description>Open Player Controls</description>
+				<width>220</width>
+				<align>left</align>
+				<label>31015</label>
+				<onclick>ActivateWindow(playercontrols)</onclick>
+				<visible>Player.HasMedia</visible>
+			</control>
+		</control>
+		<control type="grouplist">
+			<description>Media Codec Flagging Images</description>
+			<visible>[Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(505) | Control.IsVisible(509)] + !Skin.HasSetting(NoFlags)</visible>
+			<posx>100</posx>
+			<posy>34r</posy>
+			<width>1080</width>
+			<itemgap>0</itemgap>
+			<orientation>horizontal</orientation>
+			<control type="image">
+				<description>Video rez Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.VideoResolution,other_textures/flagging/video/,.png]</texture>
+			</control>
+			<control type="image">
+				<description>Common Codec Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.VideoCodec,other_textures/flagging/video/,.png]</texture>
+				<!-- Don't show if its one of the 500 divx codecs -->
+				<visible>![substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]</visible>
+			</control>
+			<control type="image">
+				<description>Divx Codec Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/video/divx.png</texture>
+				<visible>[substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]</visible>
+			</control>
+			<control type="image">
+				<description>Bluray Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/video/bluray.png</texture>
+				<visible>[substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip)] + !Skin.HasSetting(HideFilenameother_textures/flagging)</visible>
+			</control>
+			<control type="image">
+				<description>HDDVD Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/video/hddvd.png</texture>
+				<visible>substring(ListItem.FilenameAndPath,hddvd) + !Skin.HasSetting(HideFilenameother_textures/flagging)</visible>
+			</control>
+			<control type="image">
+				<description>DVD Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/video/dvd.png</texture>
+				<visible>[substring(ListItem.FilenameAndPath,dvd) + ![substring(ListItem.FilenameAndPath,hddvd) | substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip)]] + !Skin.HasSetting(HideFilenameother_textures/flagging)</visible>
+			</control>
+			<control type="image">
+				<description>TV Types Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/video/TV.png</texture>
+				<visible>[substring(ListItem.FilenameAndPath,pdtv) | substring(ListItem.FilenameAndPath,hdtv) | substring(ListItem.FilenameAndPath,dsr)] + !Skin.HasSetting(HideFilenameother_textures/flagging)</visible>
+			</control>
+			<control type="image">
+				<description>VHS Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/video/vhs.png</texture>
+				<visible>substring(ListItem.FilenameAndPath,vhs) + !Skin.HasSetting(HideFilenameother_textures/flagging)</visible>
+			</control>
+			<control type="image">
+				<description>Rated G</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/ratings/mpaa_general.png</texture>
+				<visible>substring(ListItem.mpaa,Rated G)</visible>
+			</control>
+			<control type="image">
+				<description>Rated PG</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/ratings/mpaa_pg.png</texture>
+				<visible>substring(listitem.mpaa,Rated PG) + !substring(listitem.mpaa,Rated PG-13)</visible>
+			</control>
+			<control type="image">
+				<description>Rated PG-13</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/ratings/mpaa_pg13.png</texture>
+				<visible>substring(ListItem.mpaa,Rated PG-13)</visible>
+			</control>
+			<control type="image">
+				<description>Rated R</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/ratings/mpaa_restricted.png</texture>
+				<visible>substring(ListItem.mpaa,Rated R)</visible>
+			</control>
+			<control type="image">
+				<description>Rated NC-17</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/ratings/mpaa_nc17.png</texture>
+				<visible>substring(ListItem.mpaa,Rated NC)</visible>
+			</control>
+			<control type="image">
+				<description>Dolby Digital Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>other_textures/flagging/audio/dolbydigital.png</texture>
+				<visible>[stringcompare(ListItem.AudioCodec,ac3) + stringcompare(ListItem.AudioChannels,6)]</visible>
+			</control>
+			<control type="image">
+				<description>Audio Codec Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.AudioCodec,other_textures/flagging/audio/,.png]</texture>
+				<!-- Don't show if I want the Dolby Digital Logo -->
+				<visible>![stringcompare(ListItem.AudioCodec,ac3) + stringcompare(ListItem.AudioChannels,6)]</visible>
+			</control>
+			<control type="image">
+				<description>Aspectratio Image</description>
+				<width>90</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.VideoAspect,other_textures/flagging/aspectratio/,.png]</texture>
+			</control>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

@@ -1,0 +1,48 @@
+<window id="29">
+	<defaultcontrol always="true">52</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>GlobalBackground</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>LoginScreen.xml</label>
+		</control>
+		<include>time_date</include>
+		<control type="wraplist" id="52">
+			<description>Login Wraplist</description>
+			<posx>0</posx>
+			<posy>310</posy>
+			<width>1280</width>
+			<height>100</height>
+			<visible>-</visible>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onleft>300</onleft>
+			<onright>300</onright>
+			<focusposition>2</focusposition>
+			<scrolltime>200</scrolltime>
+			<orientation>horizontal</orientation>
+			<itemlayout height="50" width="256">
+				<control type="label">
+					<posx>128</posx>
+					<width>256</width>
+					<font>Medium</font>
+					<info>ListItem.Label</info>
+					<textcolor>black</textcolor>
+					<align>center</align>
+				</control>
+			</itemlayout>
+			<focusedlayout height="50" width="256">
+				<control type="label">
+					<posx>128</posx>
+					<width>256</width>
+					<font>Large</font>
+					<info>ListItem.Label</info>
+					<textcolor>white</textcolor>
+					<align>center</align>
+				</control>
+			</focusedlayout>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

@@ -1,0 +1,77 @@
+<window>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<coordinates>
+		<posx>10</posx>
+		<posy>10</posy>
+	</coordinates>
+	<controls>		
+		<control type="group">
+			<description>Welcome Screen labels</description>
+			<visible>!Skin.HasSetting(WelcomeScreen)</visible>
+			<control type="image">
+				<posx>-10</posx>
+				<posy>-10</posy>
+				<width>1280</width>
+				<height>720</height>
+				<texture background="true">special://skin/backgrounds/default.jpg</texture>
+			</control>			
+			<control type="label">
+				<posx>120</posx>
+				<posy>140</posy>
+				<width>1280</width>
+				<height>35</height>
+				<font>Large</font>
+				<label>31100</label>
+			</control>			
+			<control type="label">
+				<posx>120</posx>
+				<posy>220</posy>
+				<width>1280</width>
+				<height>270</height>
+				<font>Medium</font>
+				<label>31101</label>
+			</control>
+		</control>			
+		<control type="button" id="10">
+			<description>Run Recently Added script</description>
+			<onfocus>XBMC.RunScript(special://skin/scripts/recentlyadded/default.py,limit=8)</onfocus>
+			<onfocus>SetFocus(11)</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+		</control>		
+		<control type="button" id="11">
+			<description>Run Favourites script</description>
+			<onfocus>XBMC.RunScript(special://skin/scripts/favourites/default.py,limit=6)</onfocus>
+			<onfocus>SetFocus(12)</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+		</control>		
+		<control type="button" id="12">
+			<description>Trigger don't show Welcome Screen</description>
+			<visible>Skin.HasSetting(WelcomeScreen)</visible>
+			<onfocus>Skin.Reset(LibraryUpdated)</onfocus> 
+			<onfocus>ReplaceWindow(Home)</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<animation type="WindowClose" condition="Window.Next(Home)">
+				<effect type="fade" start="0" end="0" time="0" delay="1500" />
+			</animation>
+		</control>		
+		<control type="button" id="12">
+			<description>Trigger show Welcome Screen</description>
+			<visible>!Skin.HasSetting(WelcomeScreen)</visible>
+			<posx>280r</posx>
+			<posy>50r</posy>
+			<height>30</height>
+			<width>300</width>
+			<font>Small</font>
+			<label>31102</label>
+			<onfocus>Skin.SetBool(WelcomeScreen)</onfocus>
+			<onfocus>Skin.Reset(LibraryUpdated)</onfocus>
+			<onclick>ReplaceWindow(Home)</onclick>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+		</control>
+	</controls>
+</window>

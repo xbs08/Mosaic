@@ -1,0 +1,14 @@
+<skin>
+  <defaultresolution>720p</defaultresolution>
+  <defaultresolutionwide>720p</defaultresolutionwide>
+  <version>2.1</version>
+  <effectslowdown>1.00</effectslowdown>
+
+  <credits>
+    <skinname>Mosaic</skinname>
+	<platform>XBox</platform>
+	<name>xbs</name>
+	<description>Mosaic aims to be a simple, fast, easy to use and lite xbmc4xbox skin</description>
+    <thanks>Wir3d, Hitcher, Team BlackBolt, Jezz_X, Jeroen, XBMC Team and Google</thanks>
+  </credits>
+</skin>

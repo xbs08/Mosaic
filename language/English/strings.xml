@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<strings>
+  <string id="31000">Finishes at</string>
+  <string id="31001">Files Mode</string>
+  <!--
+  <string id="31002">PROGRAMS</string>
+  <string id="31003">VIDEOS</string>
+  <string id="31004">MUSIC</string>
+  <string id="31005">PICTURES</string>
+  <string id="31006">MOVIES</string>
+  <string id="31007">TV SHOWS</string>
+  <string id="31008">FAVOURITES</string>
+  <string id="31009">PROFILES</string>
+  <string id="31010">WEATHER</string>
+  <string id="31011">FILE MANAGER</string>
+  <string id="31012">SETTINGS</string>
+  <string id="31013">SHUTDOWN</string>
+  <string id="31014">PLAY DISC</string>
+  -->
+  <string id="31015">Player Controls</string>
+  <string id="31016">Background Visuals</string>
+  <string id="31017">Lyrics/Subtitles</string>
+  <string id="31018">Current Selected</string>
+  <string id="31019">Open playlist</string>
+  <string id="31020">Save playlist</string>
+  <string id="31021">Close playlist</string>
+  <string id="31022">System music files</string>
+  <string id="31023">Disable Background Visualiser</string>
+  <string id="31024">Disable Background Video</string>
+  <string id="31025">Click to set Lyrics script</string>
+  <string id="31026">Click to set Subtitles script</string>
+  <string id="31027">Items</string>
+  <string id="31028">Page</string>
+  <string id="31029">Current playlist</string>
+  <string id="31030">Memory Used</string>
+  <string id="31031">Karaoke Song Selector</string>
+  <string id="31032">Visualization Presets</string>
+  <string id="31033">Debug</string>
+  <string id="31034">Enable Debug Grid</string>
+  <string id="31035">Disable Debug Info</string>
+  <string id="31036">Rewind</string>
+  <string id="31037">Pause</string>
+  <string id="31038">Stop</string>
+  <string id="31039">Fast Forward</string>
+  <string id="31040">Visualisation Presets</string>
+  <string id="31041">DVD Menu</string>
+  <string id="31042">Lyrics</string>
+  <!-- General labels -->
+  <string id="31100">[B]Mosaic[/B] [moh-zey-ik]</string>
+  <string id="31101">A simple, easy-to-use, fast and lite skin for XBMC4XBOX[CR][CR]Press left or right to navigate between Mosaic's home screens.[CR]Favourites, scripts and other items are placed on the right screen,[CR]On the left screen you can find recently added movies and episodes.[CR][CR]Check skin settings for lyrics, subtitles and background options.[CR][CR]Enjoy your media!</string>
+  <string id="31102">Press A/Select to continue</string> 
+  <!-- Main Settings labels -->
+  <string id="31160">None</string>
+  <string id="31161">Reset Skin</string>
+  <string id="31162">Misc Options</string>
+  <string id="31163"></string>
+  <string id="31164"></string>
+  <string id="31165">Free Memory:</string>
+  <string id="31166">CPU Temp:</string>
+  <string id="31167">GPU Temp:</string>
+  <string id="31168">HDD Temp:</string>
+  <string id="31169">Fan Speed:</string> 
+  <!-- Sub Settings labels -->
+  <string id="31170">Disable Background</string>
+  <string id="31171">Choose Background</string>
+  <string id="31172">Enable Fanart</string>
+  <string id="31173">Hide Plot in OSD and Views</string>
+  <string id="31174">Hide Media Flags in Views</string>
+  <string id="31175">Hide Item/Page Count in Views</string>
+  <!-- View labels -->
+  <string id="31200">Thumb</string>
+  <string id="31201">Poster</string>
+  <string id="31202">Banner</string>
+  <string id="31203">Cover</string>
+  <string id="31204">Icon</string>
+  <string id="31205"></string>
+  <string id="31206"></string>
+  <string id="31207">Low List</string>
+  <!-- Home labels -->
+  <string id="32100">Apps</string>
+  <string id="32101">Power</string>
+  <string id="32102">Emulators</string>
+</strings>

@@ -1,0 +1,60 @@
+<fonts>
+	<fontset id="Roboto (default)" unicode="true">
+		<!-- Sort Letter -->
+		<font>
+			<name>Big</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>44</size>
+		</font>
+		<font>
+			<name>Large</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>34</size>
+		</font>
+		<font>
+			<name>Medium</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>26</size>
+		</font>
+		<font>
+			<name>Small</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>18</size>
+		</font>  
+	  <!-- Required for system -->
+		<font>
+			<name>font13</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>13</size>
+		</font>
+	</fontset>
+	<fontset id="Arial" unicode="true">
+		<!-- Sort Letter -->
+		<font>
+			<name>Big</name>
+			<filename>Arial.ttf</filename>
+			<size>44</size>
+		</font>
+		<font>
+			<name>Large</name>
+			<filename>Arial.ttf</filename>
+			<size>34</size>
+		</font>
+		<font>
+			<name>Medium</name>
+			<filename>Arial.ttf</filename>
+			<size>26</size>
+		</font>
+		<font>
+			<name>Small</name>
+			<filename>Arial.ttf</filename>
+			<size>18</size>
+		</font>
+		<!-- Required for system -->
+		<font>
+			<name>font13</name>
+			<filename>Arial.ttf</filename>
+			<size>13</size>
+		</font>
+	</fontset>
+</fonts>

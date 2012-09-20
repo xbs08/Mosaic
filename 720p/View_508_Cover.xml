@@ -1,0 +1,127 @@
+<includes>
+	<include name="View_508_Cover">
+		<description>Cover View (id=508)</description>
+		<control type="wraplist" id="508">
+			<visible>Container.Content(Albums) | Window.IsVisible(Programs) | Window.IsVisible(Scripts)</visible>
+			<posx>-145</posx>
+			<posy>140</posy>
+			<width>1570</width>
+			<height>310</height>
+			<onleft>508</onleft>
+			<onright>508</onright>
+			<onup>9000</onup>
+			<ondown>68</ondown>
+			<pagecontrol>68</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<focusposition>2</focusposition>
+			<orientation>horizontal</orientation>
+			<preloaditems>2</preloaditems>
+			<viewtype label="31203">wrap</viewtype>
+			<itemlayout width="314" height="310">	
+				<control type="image">
+					<posx>2</posx>
+					<posy>0</posy>
+					<width>310</width>
+					<height>310</height>
+					<texture border="5">other_textures/ButtonNF.png</texture>
+				</control>
+				<control type="image">
+					<posx>7</posx>
+					<posy>5</posy>
+					<width>300</width>
+					<height>300</height>
+					<aspectratio>keep</aspectratio>
+					<texture fallback="DefaultAddonNone.png" background="true">$INFO[ListItem.Icon]</texture>
+					<bordersize>2</bordersize>
+				</control>
+			</itemlayout>
+			<focusedlayout width="314" height="310">
+				<control type="image">
+					<posx>2</posx>
+					<posy>0</posy>
+					<width>310</width>
+					<height>310</height>
+					<texture border="5">other_textures/ButtonFo.png</texture>
+					<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(508)">Conditional</animation>
+				</control>
+				<control type="image">
+					<posx>7</posx>
+					<posy>5</posy>
+					<width>300</width>
+					<height>300</height>
+					<aspectratio>keep</aspectratio>
+					<texture fallback="DefaultAddonNone.png" background="true">$INFO[ListItem.Icon]</texture>
+					<bordersize>2</bordersize>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(508)</visible>
+			<control type="label">
+				<posx>100</posx>
+				<posy>470</posy>
+				<width>940</width>
+				<font>Large</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<posx>100r</posx>
+				<posy>470</posy>
+				<width>140</width>
+				<font>Medium</font>
+				<align>right</align>
+				<label>$INFO[ListItem.Label2]</label>
+				<visible>Window.IsVisible(Programs)</visible>
+			</control>
+			<control type="label">
+				<posx>100r</posx>
+				<posy>470</posy>
+				<width>140</width>
+				<font>Medium</font>
+				<align>right</align>
+				<label>$INFO[ListItem.Year]</label>
+			</control>
+			<control type="label">
+				<posx>100</posx>
+				<posy>500</posy>
+				<width>540</width>
+				<font>Small</font>
+				<label>$INFO[ListItem.Artist]</label>
+			</control>
+			<control type="label">
+				<posx>100r</posx>
+				<posy>500</posy>
+				<width>540</width>
+				<font>Small</font>
+				<align>right</align>
+				<label>$INFO[ListItem.Genre]</label>
+			</control>	
+			<control type="textbox">
+				<description>Description Value Albums</description>
+				<visible>Container.Content(Albums) + !Skin.HasSetting(NoPlot)</visible>
+				<posx>100</posx>
+				<posy>540</posy>
+				<width>1080</width>
+				<height>110</height>
+				<align>justify</align>
+				<label fallback="414">$INFO[ListItem.Property(Album_Description)]</label>
+			</control>
+		</control>
+		<control type="scrollbar" id="68">
+			<posx>200</posx>
+			<posy>450</posy>
+			<height>25</height>
+			<width>880</width>
+			<onup>508</onup>
+			<ondown>9000</ondown>
+			<texturesliderbackground border="14,0,14,0">other_textures/ScrollBarH.png</texturesliderbackground>
+			<texturesliderbar border="14,0,14,0">other_textures/ScrollBarH_bar.png</texturesliderbar>
+			<texturesliderbarfocus border="14,0,14,0">other_textures/ScrollBarH_bar_focus.png</texturesliderbarfocus>
+			<textureslidernib>other_textures/ScrollBarNib.png</textureslidernib>
+			<textureslidernibfocus>other_textures/ScrollBarNib.png</textureslidernibfocus>
+			<orientation>horizontal</orientation>
+			<visible allowhiddenfocus="true">Control.IsVisible(508) + [Control.HasFocus(68) | Container.Scrolling]</visible>
+			<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(68) | Container.Scrolling">Conditional</animation>
+		</control>
+	</include>
+</includes>

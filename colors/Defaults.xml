@@ -1,0 +1,10 @@
+<colors>
+	<color name="black">FF000000</color>
+	<color name="grey">66FFFFFF</color>
+	<color name="white">FFFFFFFF</color>
+	<color name="red">FFFF4500</color>
+	<color name="blue">FF1E90FF</color>
+	<color name="orange">FFFFA500</color>
+	<color name="green">FF32CD32</color>
+	<color name="FanartDiffuse">33FFFFFF</color>
+</colors>

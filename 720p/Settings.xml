@@ -1,0 +1,190 @@
+<window id="4">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>GlobalBackground</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>Settings.xml</label>
+		</control>
+		<include>time_date</include>
+		<control type="group">
+			<control type="image">
+				<description>Footer Background</description>
+				<posx>0</posx>
+				<posy>685</posy>
+				<width>1280</width>
+				<height>35</height>
+				<texture border="20,20,20,2">other_textures/black-back.png</texture>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>694</posy>
+				<width>1280</width>
+				<height>14</height>
+				<font>Small</font>
+				<align>center</align>
+				<label>[COLOR=blue]$LOCALIZE[31165][/COLOR] $INFO[System.FreeMemory] [COLOR=blue]$LOCALIZE[13271][/COLOR] $INFO[System.CPUUsage] [COLOR=blue]$LOCALIZE[31166][/COLOR] $INFO[System.cputemperature] [COLOR=blue]$LOCALIZE[31167][/COLOR] $INFO[System.gputemperature] [COLOR=blue]$LOCALIZE[31168][/COLOR] $INFO[System.hddtemperature] [COLOR=blue]$LOCALIZE[31169][/COLOR] $INFO[System.FanSpeed]</label>
+			</control>
+		</control>	
+		<control type="panel" id="9000">
+			<description>Settings Panel</description>
+			<posx>136</posx>
+			<posy>148</posy>
+			<width>1012</width>
+			<height>429</height>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<scrolltime>200</scrolltime>
+			<include>ViewVisibleEffect</include>
+			<itemlayout height="143" width="253">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>250</width>
+					<height>140</height>
+					<texture>other_textures/ButtonNF.png</texture>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<width>250</width>
+					<info>ListItem.Label</info>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="image">
+					<posx>90</posx>
+					<posy>45</posy>
+					<width>64</width>
+					<height>64</height>
+					<texture>$INFO[Listitem.ActualIcon]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout height="143" width="253">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>250</width>
+					<height>140</height>
+					<texture>other_textures/ButtonNF.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>250</width>
+					<height>140</height>
+					<texture>other_textures/ButtonFO.png</texture>
+					<visible>Control.HasFocus(9000)</visible>
+					<animation effect="fade" start="0" end="100" time="200">Focus</animation> 
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>250</width>
+					<height>140</height>
+					<texture>other_textures/ButtonNF.png</texture>
+					<visible>!Control.HasFocus(9000)</visible>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<width>250</width>
+					<info>ListItem.Label</info>
+					<font>Medium</font>
+					<textcolor>white</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="image">
+					<posx>90</posx>
+					<posy>45</posy>
+					<width>64</width>
+					<height>64</height>
+					<texture>$INFO[Listitem.ActualIcon]</texture>
+				</control>
+			</focusedlayout>
+			<content>	
+				<item id="1">
+					<description>Appearance</description>
+					<label>480</label>
+					<onclick>activatewindow(AppearanceSettings)</onclick>
+					<icon>icons/icon-appearance.png</icon>
+				</item>
+				<item id="2">
+					<description>Videos</description>
+					<label>3</label>
+					<onclick>activatewindow(VideosSettings)</onclick>
+					<icon>icons/icon-videos.png</icon>
+				</item>
+				<item id="3">
+					<description>Music</description>
+					<label>2</label>
+					<onclick>activatewindow(MusicSettings)</onclick>
+					<icon>icons/icon-music.png</icon>
+				</item>
+				<item id="4">
+					<description>Pictures</description>
+					<label>1</label>
+					<onclick>activatewindow(PicturesSettings)</onclick>
+					<icon>icons/icon-pictures.png</icon>
+				</item>
+				
+				<item id="5">
+					<description>Programs</description>
+					<label>0</label>
+					<label2>10004</label2>
+					<onclick>activatewindow(ProgramsSettings)</onclick>
+					<icon>icons/icon-apps.png</icon>
+				</item>
+				<item id="6">
+					<description>Network</description>
+					<label>705</label>
+					<onclick>activatewindow(NetworkSettings)</onclick>
+					<icon>icons/icon-network.png</icon>
+				</item>
+				<item id="7">
+					<description>Weather</description>
+					<label>8</label>
+					<onclick>activatewindow(WeatherSettings)</onclick>
+					<icon>icons/icon-weather.png</icon>
+				</item>
+				<item id="8">
+					<description>Profiles</description>
+					<label>13200</label>
+					<onclick>activatewindow(Profiles)</onclick>
+					<icon>icons/icon-profile.png</icon>
+				</item>
+				<item id="9">
+					<description>Skin Settings</description>
+					<label>166</label>
+					<onclick>activatewindow(1111)</onclick>
+					<icon>icons/icon-radioactive.png</icon> <!-- icon-skin -->
+				</item>
+				<item id="10">
+					<description>System</description>
+					<label>13000</label>
+					<onclick>activatewindow(SystemSettings)</onclick>
+					<icon>icons/icon-system.png</icon>
+				</item>
+				<item id="11">
+					<description>System Info</description>
+					<label>130</label>
+					<label2></label2>
+					<onclick>activatewindow(7)</onclick>
+					<icon>icons/icon-systeminfo.png</icon>
+				</item>
+				<item id="12">
+					<description>Filemanager</description>
+					<label>7</label>
+					<label2></label2>
+					<onclick>ActivateWindow(Filemanager)</onclick>
+					<icon>icons/icon-hdd.png</icon>
+				</item>	
+			</content>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>
